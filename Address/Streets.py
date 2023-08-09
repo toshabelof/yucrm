@@ -7,7 +7,7 @@ from yucrm import YuCRM
 URL_STREETS = '/realty.address.streets'
 
 
-class Districts(YuCRM):
+class Street(YuCRM):
     def __init__(self, yu_crm):
         super().__init__(yu_crm.login, yu_crm.token)
 

@@ -7,7 +7,7 @@ from yucrm import YuCRM
 URL_HIGHWAYS = '/realty.address.regions'
 
 
-class Districts(YuCRM):
+class Highways(YuCRM):
     def __init__(self, yu_crm):
         super().__init__(yu_crm.login, yu_crm.token)
 

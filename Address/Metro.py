@@ -7,7 +7,7 @@ from yucrm import YuCRM
 URL_METRO = '/realty.address.metro'
 
 
-class Districts(YuCRM):
+class Metro(YuCRM):
     def __init__(self, yu_crm):
         super().__init__(yu_crm.login, yu_crm.token)
 

@@ -7,7 +7,7 @@ from yucrm import YuCRM
 URL_STATION_DISTANCES = '/realty.address.station_distances'
 
 
-class Districts(YuCRM):
+class StationDistances(YuCRM):
     def __init__(self, yu_crm):
         super().__init__(yu_crm.login, yu_crm.token)
 
