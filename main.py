@@ -1,10 +1,11 @@
 from yucrm import YuCRM
-from Address.Regions import Regions
+from Lists.Deposits import Deposits
 
 
 def main():
-    crm = YuCRM('guseinov', '1c7d2975ff6e064d393eace4ad6b07f6')
-    r = Regions(crm)
+    crm = YuCRM('belovstech', 'b20e619ab772f294fba8ad6aa160b1f8')
+    d = Deposits(crm)
+    print(d.List().json())
 
 
 if __name__ == '__main__':

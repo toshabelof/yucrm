@@ -1,46 +1,8 @@
-import requests
-from requests import Response
-
-import _log
-from yucrm import YuCRM
+from realty.realty import Realty
 
 URL_STATION_DISTANCES = '/realty.address.station_distances'
 
 
-class StationDistances(YuCRM):
-    def __init__(self, yu_crm):
-        super().__init__(yu_crm.login, yu_crm.token)
-
-    def __full_url(self):
-        return f'{super().url.format(login=super().login, token=super().token)}{URL_STATION_DISTANCES}'
-
-    def List(self,
-             id=None, name=None, page=None, limit=None, mode=None, order_by=None, order_dir=None) -> Response:
-        url = f'{self.__full_url()}/list'
-        params = {'page': page, 'limit': limit, 'mode': mode, 'order_by': order_by, 'order_dir': order_dir,
-                  'id': id, 'name': name}
-        _log.logg(f'Get request {url}, params={params}')
-
-        result = requests.get(url, params=params)
-        return result
-
-    def Get(self, id) -> Response:
-        url = f'{self.__full_url()}/get/{id}'
-        _log.logg(f'Get request {url}')
-
-        result = requests.get(url)
-        return result
-
-    def Update(self, id, params) -> Response:
-        url = f'{self.__full_url()}/update/{id}'
-        _log.logg(f'Get request {url}, params={params}')
-
-        result = requests.get(url, params=params)
-        return result
-
-    def Add(self, params) -> Response:
-        url = f'{self.__full_url()}/add'
-        _log.logg(f'Get request {url}, params={params}')
-
-        result = requests.get(url, params=params)
-        return result
+class StationDistances(Realty):
+    def __init__(self, yu_crm=None):
+        super().__init__(url=URL_STATION_DISTANCES, login=yu_crm.login, token=yu_crm.token)
