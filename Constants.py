@@ -1,7 +1,7 @@
-from pip._internal.utils.misc import enum
+from enum import Enum
 
 
-class Compare(enum):
+class Compare(Enum):
     EQUALS = '='
     IN = 'in'
     MIN = 'min'
